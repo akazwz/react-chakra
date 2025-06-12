@@ -1,87 +1,141 @@
-# Welcome to React Router!
+# React Router 7 + Chakra UI 模板
 
-A modern, production-ready template for building full-stack React applications using React Router.
+一个基于 React Router 7 和 Chakra UI 的现代 React 应用模板。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 📋 特性
 
-## Features
+- ⚡️ React Router 7 + 服务端渲染 (SSR)
+- 🎨 Chakra UI 3.x 组件库
+- 🔒 TypeScript 支持
+- 📱 响应式布局示例
+- 🌙 主题系统 (next-themes)
+- 🛠️ Vite + HMR 开发环境
+- 📦 Biome 代码格式化
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## 🛠️ 技术栈
 
-## Getting Started
+- **框架**: React 19 + React Router 7
+- **UI 库**: Chakra UI 3.x
+- **语言**: TypeScript
+- **构建工具**: Vite
+- **包管理器**: pnpm
 
-### Installation
+## 🚀 快速开始
 
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
+### 安装依赖
 
 ```bash
-npm run dev
+pnpm install
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+### 开发模式
 
 ```bash
-npm run build
+pnpm dev
 ```
 
-## Deployment
+访问 `http://localhost:5173`
 
-### Docker Deployment
-
-To build and run using Docker:
+### 构建
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+pnpm build
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+### 其他命令
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+```bash
+pnpm start      # 启动生产服务器
+pnpm typecheck  # 类型检查
+pnpm format     # 代码格式化
 ```
 
-## Styling
+## 📁 项目结构
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+```
+├── app/
+│   ├── components/         # 可复用组件
+│   ├── routes/            # 路由页面
+│   │   ├── layout.tsx     # 布局组件
+│   │   └── home.tsx       # 首页
+│   ├── root.tsx           # 根组件
+│   └── routes.ts          # 路由配置
+├── public/                # 静态资源
+└── package.json
+```
+
+## 📝 使用说明
+
+### 添加新页面
+
+1. 在 `app/routes/` 创建新路由文件
+2. 在 `app/routes.ts` 配置路由
+3. 在 `layout.tsx` 添加导航（可选）
+
+### 主题配置
+
+模板已配置 Chakra UI 主题系统，支持浅色/深色模式切换。
+
+### 组件开发
+
+使用 Chakra UI 组件构建界面，所有组件都有完整的 TypeScript 类型支持。
 
 ---
 
-Built with ❤️ using React Router.
+### 💬 聊天功能
+- [ ] 聊天界面设计
+- [ ] 消息收发逻辑
+- [ ] 实时通信集成
+
+### 👥 联系人管理
+- [ ] 联系人列表
+- [ ] 添加/删除联系人
+- [ ] 用户状态显示
+
+### 🧭 探索功能
+- [ ] 用户/群组搜索
+- [ ] 推荐系统
+- [ ] 社交功能
+
+### ⚙️ 设置页面
+- [ ] 用户个人资料
+- [ ] 应用设置
+- [ ] 主题切换界面
+
+## 🏗️ 构建和部署
+
+### 生产构建
+
+```bash
+pnpm build
+```
+
+### 部署
+
+支持部署到：
+- Vercel, Netlify 等静态托管平台
+- Node.js 服务器
+- Docker 容器
+
+## 🔧 开发指南
+
+### 开始开发
+
+1. 选择一个功能模块（如聊天、联系人等）
+2. 在对应的路由文件中实现界面
+3. 添加必要的组件到 `app/components/`
+4. 根据需要扩展路由配置
+
+### 添加新页面
+
+1. 在 `app/routes/` 创建新路由文件
+2. 在 `app/routes.ts` 添加路由配置
+3. 如需导航，在 `layout.tsx` 添加导航项
+
+## 🤝 贡献
+
+欢迎贡献代码，帮助完善这个即时通讯应用！
+
+---
+
+Built with ❤️ using React Router 7 and Chakra UI
