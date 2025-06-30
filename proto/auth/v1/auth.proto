@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package auth.v1;
+
+option go_package = "bytepacker/gen/auth/v1;authv1";
+
+// 用户认证服务
+service AuthService {
+  // 用户注册
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  // 用户登录
+  rpc Login(LoginRequest) returns (LoginResponse);
+  // 获取用户信息
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+}
+
+// 注册请求
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// 注册响应
+message RegisterResponse {
+  string token = 1;
+  User user = 2;
+}
+
+// 登录请求
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// 登录响应
+message LoginResponse {
+  string token = 1;
+  User user = 2;
+}
+
+// 获取用户信息请求
+message GetProfileRequest {}
+
+// 获取用户信息响应
+message GetProfileResponse {
+  User user = 1;
+}
+
+// 用户信息
+message User {
+  string id = 1;
+  string username = 2;
+  string avatar = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}

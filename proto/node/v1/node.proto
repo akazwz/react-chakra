@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package node.v1;
+
+option go_package = "bytepacker/gen/node/v1;nodev1";
+
+// 节点服务
+service NodeService {
+  // 新建节点
+  rpc CreateNode(CreateNodeRequest) returns (CreateNodeResponse);
+  // 获取节点列表
+  rpc GetNodeList(GetNodeListRequest) returns (GetNodeListResponse);
+  // 获取文件夹路径（用于面包屑导航）
+  rpc GetNodePath(GetNodePathRequest) returns (GetNodePathResponse);
+  // 批量删除节点
+  rpc BatchDeleteNodes(BatchDeleteNodesRequest) returns (BatchDeleteNodesResponse);
+  // 重命名节点
+  rpc RenameNode(RenameNodeRequest) returns (RenameNodeResponse);
+}
+
+// 节点
+message Node {
+    string id = 1;
+    string name = 2;
+    string parent_id = 3;
+    string user_id = 4;
+    bool is_folder = 5;
+    int64 size = 6;
+    string hash = 7;
+    string mime_type = 8;
+    string thumbnail_url = 9;
+    string preview_url = 10;
+    string created_at = 11;
+    string updated_at = 12;
+}
+
+message CreateNodeRequest {
+  string parent_id = 1;
+  string name = 2;
+  bool is_folder = 3;
+  string hash = 4; // 文件时必需，文件夹时忽略
+}
+
+message CreateNodeResponse {
+  Node node = 1;
+}
+
+message GetNodeListRequest {
+  string parent_id = 1;
+}
+
+message GetNodeListResponse {
+  repeated Node nodes = 1;
+}
+
+message GetNodePathRequest {
+  string node_id = 1; // 节点ID，用于获取面包屑导航路径
+}
+
+message GetNodePathResponse {
+  repeated PathSegment path_segments = 1;      // 面包屑路径段
+}
+
+// 路径段
+message PathSegment {
+  string id = 1;
+  string name = 2;
+}
+
+message BatchDeleteNodesRequest {
+  repeated string node_ids = 1;
+}
+
+message BatchDeleteNodesResponse {
+  bool success = 1;
+}
+
+message RenameNodeRequest {
+  string node_id = 1;
+  string name = 2;
+}
+
+message RenameNodeResponse {
+  Node node = 1;
+}

@@ -1,15 +1,16 @@
-import { Button, Heading, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { Button, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import {
-	RiChat3Line,
-	RiChat3Fill,
-	RiContactsBook3Fill,
-	RiContactsBook3Line,
-	RiCompass3Fill,
-	RiCompass3Line,
 	RiSettings3Fill,
 	RiSettings3Line,
+	RiHome3Line,
+	RiHome3Fill,
+	RiFolderLine,
+	RiFolderFill,
+	RiCloudLine,
 } from "react-icons/ri";
-import { Outlet, useLocation, useNavigate } from "react-router";
+import { Outlet, redirect, useLocation, useNavigate } from "react-router";
+import CreateFolderDialog from "~/components/dialogs/create-folder-dialog";
+import { useAuthStore } from "~/stores/auth";
 
 interface NavItem {
 	icon: React.ElementType;
@@ -20,30 +21,32 @@ interface NavItem {
 
 const navItems: NavItem[] = [
 	{
-		icon: RiChat3Line,
-		activeIcon: RiChat3Fill,
-		label: "Chat",
+		icon: RiHome3Line,
+		activeIcon: RiHome3Fill,
+		label: "首页",
 		href: "/",
 	},
 	{
-		icon: RiContactsBook3Line,
-		activeIcon: RiContactsBook3Fill,
-		label: "Contacts",
-		href: "/contacts",
-	},
-	{
-		icon: RiCompass3Line,
-		activeIcon: RiCompass3Fill,
-		label: "Explore",
-		href: "/explore",
+		icon: RiFolderLine,
+		activeIcon: RiFolderFill,
+		label: "文件",
+		href: "/files",
 	},
 	{
 		icon: RiSettings3Line,
 		activeIcon: RiSettings3Fill,
-		label: "Settings",
+		label: "设置",
 		href: "/settings",
 	},
 ];
+
+export async function clientLoader() {
+	const isAuthenticated = useAuthStore.getState().isAuthenticated();
+	if (!isAuthenticated) {
+		throw redirect("/login");
+	}
+	return null;
+}
 
 export default function Layout() {
 	const { pathname } = useLocation();
@@ -58,7 +61,9 @@ export default function Layout() {
 				borderRightWidth={1}
 				borderRightColor="bg.muted"
 			>
-				<Heading>IM</Heading>
+				<VStack w="full" gap={0} alignItems="center" p={2}>
+					<Icon as={RiCloudLine} size="2xl" />
+				</VStack>
 				<VStack w="full">
 					{navItems.map((item) => {
 						const isActive = pathname === item.href;
@@ -67,7 +72,7 @@ export default function Layout() {
 								key={item.href}
 								w="full"
 								justifyContent="start"
-								variant="ghost"
+								variant={isActive ? "subtle" : "ghost"}
 								fontWeight={isActive ? "bold" : ""}
 								onClick={() => navigate(item.href)}
 							>
@@ -110,10 +115,11 @@ export default function Layout() {
 							onClick={() => navigate(item.href)}
 						>
 							{isActive ? (
-								<Icon as={item.activeIcon} size="xl" />
+								<Icon as={item.activeIcon} />
 							) : (
-								<Icon as={item.icon} size="xl" />
+								<Icon as={item.icon} />
 							)}
+							<Text fontSize="xs">{item.label}</Text>
 						</Button>
 					);
 				})}

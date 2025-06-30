@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package upload.v1;
+
+option go_package = "bytepacker/gen/upload/v1;uploadv1";
+
+// 上传服务
+service UploadService {
+  // 检查文件hash是否存在
+  rpc CheckFileHash(CheckFileHashRequest) returns (CheckFileHashResponse);
+  
+  // 获取上传会话（不存在则创建）
+  rpc GetUploadSession(GetUploadSessionRequest) returns (GetUploadSessionResponse);
+  
+  // 上传分块
+  rpc UploadChunk(UploadChunkRequest) returns (UploadChunkResponse);
+  
+  // 完成上传
+  rpc CompleteUpload(CompleteUploadRequest) returns (CompleteUploadResponse);
+}
+
+// 检查文件hash请求
+message CheckFileHashRequest {
+  string file_hash = 1;
+}
+
+// 检查文件hash响应
+message CheckFileHashResponse {
+  bool exists = 1;
+}
+
+// 获取上传会话请求
+message GetUploadSessionRequest {
+  string file_hash = 1;
+  int64 file_size = 2;
+}
+
+// 获取上传会话响应
+message GetUploadSessionResponse {
+  string session_id = 1;
+  int32 total_chunks = 2;
+  int64 chunk_size = 3;
+  repeated int32 uploaded_chunks = 4; // 断点续传：已上传的分块
+}
+
+// 上传分块请求
+message UploadChunkRequest {
+  string session_id = 1;
+  int32 chunk_number = 2;
+  bytes chunk_data = 3;
+}
+
+// 上传分块响应
+message UploadChunkResponse {
+  int32 chunk_number = 1;
+  string etag = 2;
+  bool success = 3;
+  bool upload_completed = 4; // 所有分块是否完成
+}
+
+// 完成上传请求
+message CompleteUploadRequest {
+  string session_id = 1;
+}
+
+// 完成上传响应
+message CompleteUploadResponse {
+  string storage_hash = 1;
+  bool success = 2;
+}
