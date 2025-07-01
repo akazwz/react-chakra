@@ -10,6 +10,7 @@ import {
 	Image,
 	Text,
 	Center,
+	Float,
 } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
 import { useQueryState } from "nuqs";
@@ -21,6 +22,8 @@ import {
 	RiCheckLine,
 	RiCheckboxCircleFill,
 	RiEditBoxLine,
+	RiPlayCircleLine,
+	RiPlayCircleFill,
 } from "react-icons/ri";
 
 import { nodeClient } from "~/client/connect";
@@ -227,17 +230,24 @@ function NodeCard({ node }: { node: Node }) {
 				</Center>
 			)}
 
-			<Box p={2} boxSize="24">
+			<Center p={2} boxSize="24" position="relative">
+				<Float
+					placement="middle-center"
+					hidden={!node.mimeType?.startsWith("video/")}
+				>
+					<Icon as={RiPlayCircleFill} color="fg.inverted" shadow="sm" />
+				</Float>
 				<Image
 					src={node.thumbnailUrl || getDefaultThumbnailUrl(node)}
 					alt="预览图"
 					maxW="full"
 					maxH="full"
 					mx="auto"
+					my="auto"
 					rounded="sm"
 					objectFit="contain"
 				/>
-			</Box>
+			</Center>
 			<VStack gap={1} alignItems="center" py={1} w="full">
 				<Text fontSize="sm" truncate w="full" textAlign="center">
 					{node.name}
