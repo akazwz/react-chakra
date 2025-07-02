@@ -18,13 +18,11 @@ import {
 	RiDeleteBinLine,
 	RiCloseLine,
 	RiCheckboxMultipleLine,
-	RiCheckboxLine,
-	RiCheckLine,
 	RiCheckboxCircleFill,
 	RiEditBoxLine,
-	RiPlayCircleLine,
 	RiPlayCircleFill,
 } from "react-icons/ri";
+import { format, parseISO } from "date-fns";
 
 import { nodeClient } from "~/client/connect";
 import { NodePath } from "~/components/nodes/node-path";
@@ -38,6 +36,8 @@ import RenameNodeDialog from "~/components/dialogs/rename-node-dialog";
 import UploadQueueDialog from "~/components/dialogs/upload-queue-dialog";
 import CreateActionsMenu from "~/components/files/create-actions-menu";
 import PreviewDialog from "~/components/dialogs/preview-dialog";
+import OfflineDownloadDialog from "~/components/dialogs/offline-download-dialog";
+import DownloadFileDialog from "~/components/dialogs/download-file-dialog";
 
 export default function Files() {
 	const [parentId] = useQueryState("parentId");
@@ -167,6 +167,8 @@ export default function Files() {
 			<RenameNodeDialog />
 			<UploadQueueDialog />
 			<PreviewDialog />
+			<OfflineDownloadDialog />
+			<DownloadFileDialog />
 		</VStack>
 	);
 }
@@ -226,7 +228,7 @@ function NodeCard({ node }: { node: Node }) {
 					p={0.5}
 					rounded="md"
 				>
-					<Icon as={RiCheckboxCircleFill} color="fg.info" />
+					<Icon as={RiCheckboxCircleFill} />
 				</Center>
 			)}
 
@@ -235,7 +237,7 @@ function NodeCard({ node }: { node: Node }) {
 					placement="middle-center"
 					hidden={!node.mimeType?.startsWith("video/")}
 				>
-					<Icon as={RiPlayCircleFill} color="fg.inverted" shadow="sm" />
+					<Icon as={RiPlayCircleFill} color="fg.inverted" />
 				</Float>
 				<Image
 					src={node.thumbnailUrl || getDefaultThumbnailUrl(node)}
@@ -253,7 +255,9 @@ function NodeCard({ node }: { node: Node }) {
 					{node.name}
 				</Text>
 				<Text fontSize="xs" fontWeight="normal">
-					{node.updatedAt}
+					{node.updatedAt
+						? format(parseISO(node.updatedAt), "yyyy-MM-dd HH:mm")
+						: ""}
 				</Text>
 			</VStack>
 		</Button>

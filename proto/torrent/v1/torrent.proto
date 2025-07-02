@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package torrent.v1;
+
+option go_package = "bytepacker/gen/torrent/v1;torrentv1";
+
+// Torrent服务
+service TorrentService {
+  // 获取torrent信息
+  rpc GetTorrentInfo(GetTorrentInfoRequest) returns (GetTorrentInfoResponse);
+}
+
+// Torrent信息
+message TorrentInfo {
+  string name = 1;
+  int64 size = 2;
+  string info_hash = 3;
+  repeated TorrentFile files = 4;
+}
+
+// Torrent文件
+message TorrentFile {
+  string path = 1;
+  int64 size = 2;
+}
+
+// 获取torrent信息请求
+message GetTorrentInfoRequest {
+  string magnet_uri = 1;
+}
+
+// 获取torrent信息响应
+message GetTorrentInfoResponse {
+  TorrentInfo info = 1;
+}

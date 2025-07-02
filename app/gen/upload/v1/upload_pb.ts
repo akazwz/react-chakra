@@ -2,26 +2,15 @@
 // @generated from file upload/v1/upload.proto (package upload.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
-import {
-	fileDesc,
-	messageDesc,
-	serviceDesc,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file upload/v1/upload.proto.
  */
-export const file_upload_v1_upload: GenFile =
-	/*@__PURE__*/
-	fileDesc(
-		"ChZ1cGxvYWQvdjEvdXBsb2FkLnByb3RvEgl1cGxvYWQudjEiKQoUQ2hlY2tGaWxlSGFzaFJlcXVlc3QSEQoJZmlsZV9oYXNoGAEgASgJIicKFUNoZWNrRmlsZUhhc2hSZXNwb25zZRIOCgZleGlzdHMYASABKAgiKAoTR2V0VXBsb2FkVXJsUmVxdWVzdBIRCglmaWxlX2hhc2gYASABKAkiUgoUR2V0VXBsb2FkVXJsUmVzcG9uc2USEQoJZmlsZV9oYXNoGAEgASgJEhMKC3N0b3JhZ2Vfa2V5GAIgASgJEhIKCnVwbG9hZF91cmwYAyABKAkiPwoVQ29tcGxldGVVcGxvYWRSZXF1ZXN0EhEKCWZpbGVfaGFzaBgBIAEoCRITCgtzdG9yYWdlX2tleRgCIAEoCSJRChZDb21wbGV0ZVVwbG9hZFJlc3BvbnNlEhEKCWZpbGVfaGFzaBgBIAEoCRITCgtzdG9yYWdlX2tleRgCIAEoCRIPCgdzdWNjZXNzGAMgASgIMosCCg1VcGxvYWRTZXJ2aWNlElIKDUNoZWNrRmlsZUhhc2gSHy51cGxvYWQudjEuQ2hlY2tGaWxlSGFzaFJlcXVlc3QaIC51cGxvYWQudjEuQ2hlY2tGaWxlSGFzaFJlc3BvbnNlEk8KDEdldFVwbG9hZFVybBIeLnVwbG9hZC52MS5HZXRVcGxvYWRVcmxSZXF1ZXN0Gh8udXBsb2FkLnYxLkdldFVwbG9hZFVybFJlc3BvbnNlElUKDkNvbXBsZXRlVXBsb2FkEiAudXBsb2FkLnYxLkNvbXBsZXRlVXBsb2FkUmVxdWVzdBohLnVwbG9hZC52MS5Db21wbGV0ZVVwbG9hZFJlc3BvbnNlQiNaIWJ5dGVwYWNrZXIvZ2VuL3VwbG9hZC92MTt1cGxvYWR2MWIGcHJvdG8z",
-	);
+export const file_upload_v1_upload: GenFile = /*@__PURE__*/
+  fileDesc("ChZ1cGxvYWQvdjEvdXBsb2FkLnByb3RvEgl1cGxvYWQudjEiKQoUQ2hlY2tGaWxlSGFzaFJlcXVlc3QSEQoJZmlsZV9oYXNoGAEgASgJIicKFUNoZWNrRmlsZUhhc2hSZXNwb25zZRIOCgZleGlzdHMYASABKAgiKAoTR2V0VXBsb2FkVXJsUmVxdWVzdBIRCglmaWxlX2hhc2gYASABKAkiUgoUR2V0VXBsb2FkVXJsUmVzcG9uc2USEQoJZmlsZV9oYXNoGAEgASgJEhMKC3N0b3JhZ2Vfa2V5GAIgASgJEhIKCnVwbG9hZF91cmwYAyABKAkiPwoVQ29tcGxldGVVcGxvYWRSZXF1ZXN0EhEKCWZpbGVfaGFzaBgBIAEoCRITCgtzdG9yYWdlX2tleRgCIAEoCSJRChZDb21wbGV0ZVVwbG9hZFJlc3BvbnNlEhEKCWZpbGVfaGFzaBgBIAEoCRITCgtzdG9yYWdlX2tleRgCIAEoCRIPCgdzdWNjZXNzGAMgASgIMosCCg1VcGxvYWRTZXJ2aWNlElIKDUNoZWNrRmlsZUhhc2gSHy51cGxvYWQudjEuQ2hlY2tGaWxlSGFzaFJlcXVlc3QaIC51cGxvYWQudjEuQ2hlY2tGaWxlSGFzaFJlc3BvbnNlEk8KDEdldFVwbG9hZFVybBIeLnVwbG9hZC52MS5HZXRVcGxvYWRVcmxSZXF1ZXN0Gh8udXBsb2FkLnYxLkdldFVwbG9hZFVybFJlc3BvbnNlElUKDkNvbXBsZXRlVXBsb2FkEiAudXBsb2FkLnYxLkNvbXBsZXRlVXBsb2FkUmVxdWVzdBohLnVwbG9hZC52MS5Db21wbGV0ZVVwbG9hZFJlc3BvbnNlQiNaIWJ5dGVwYWNrZXIvZ2VuL3VwbG9hZC92MTt1cGxvYWR2MWIGcHJvdG8z");
 
 /**
  * 检查文件hash请求
@@ -29,143 +18,134 @@ export const file_upload_v1_upload: GenFile =
  * @generated from message upload.v1.CheckFileHashRequest
  */
 export type CheckFileHashRequest = Message<"upload.v1.CheckFileHashRequest"> & {
-	/**
-	 * @generated from field: string file_hash = 1;
-	 */
-	fileHash: string;
+  /**
+   * @generated from field: string file_hash = 1;
+   */
+  fileHash: string;
 };
 
 /**
  * Describes the message upload.v1.CheckFileHashRequest.
  * Use `create(CheckFileHashRequestSchema)` to create a new message.
  */
-export const CheckFileHashRequestSchema: GenMessage<CheckFileHashRequest> =
-	/*@__PURE__*/
-	messageDesc(file_upload_v1_upload, 0);
+export const CheckFileHashRequestSchema: GenMessage<CheckFileHashRequest> = /*@__PURE__*/
+  messageDesc(file_upload_v1_upload, 0);
 
 /**
  * 检查文件hash响应
  *
  * @generated from message upload.v1.CheckFileHashResponse
  */
-export type CheckFileHashResponse =
-	Message<"upload.v1.CheckFileHashResponse"> & {
-		/**
-		 * @generated from field: bool exists = 1;
-		 */
-		exists: boolean;
-	};
+export type CheckFileHashResponse = Message<"upload.v1.CheckFileHashResponse"> & {
+  /**
+   * @generated from field: bool exists = 1;
+   */
+  exists: boolean;
+};
 
 /**
  * Describes the message upload.v1.CheckFileHashResponse.
  * Use `create(CheckFileHashResponseSchema)` to create a new message.
  */
-export const CheckFileHashResponseSchema: GenMessage<CheckFileHashResponse> =
-	/*@__PURE__*/
-	messageDesc(file_upload_v1_upload, 1);
+export const CheckFileHashResponseSchema: GenMessage<CheckFileHashResponse> = /*@__PURE__*/
+  messageDesc(file_upload_v1_upload, 1);
 
 /**
  * @generated from message upload.v1.GetUploadUrlRequest
  */
 export type GetUploadUrlRequest = Message<"upload.v1.GetUploadUrlRequest"> & {
-	/**
-	 * @generated from field: string file_hash = 1;
-	 */
-	fileHash: string;
+  /**
+   * @generated from field: string file_hash = 1;
+   */
+  fileHash: string;
 };
 
 /**
  * Describes the message upload.v1.GetUploadUrlRequest.
  * Use `create(GetUploadUrlRequestSchema)` to create a new message.
  */
-export const GetUploadUrlRequestSchema: GenMessage<GetUploadUrlRequest> =
-	/*@__PURE__*/
-	messageDesc(file_upload_v1_upload, 2);
+export const GetUploadUrlRequestSchema: GenMessage<GetUploadUrlRequest> = /*@__PURE__*/
+  messageDesc(file_upload_v1_upload, 2);
 
 /**
  * @generated from message upload.v1.GetUploadUrlResponse
  */
 export type GetUploadUrlResponse = Message<"upload.v1.GetUploadUrlResponse"> & {
-	/**
-	 * @generated from field: string file_hash = 1;
-	 */
-	fileHash: string;
+  /**
+   * @generated from field: string file_hash = 1;
+   */
+  fileHash: string;
 
-	/**
-	 * @generated from field: string storage_key = 2;
-	 */
-	storageKey: string;
+  /**
+   * @generated from field: string storage_key = 2;
+   */
+  storageKey: string;
 
-	/**
-	 * @generated from field: string upload_url = 3;
-	 */
-	uploadUrl: string;
+  /**
+   * @generated from field: string upload_url = 3;
+   */
+  uploadUrl: string;
 };
 
 /**
  * Describes the message upload.v1.GetUploadUrlResponse.
  * Use `create(GetUploadUrlResponseSchema)` to create a new message.
  */
-export const GetUploadUrlResponseSchema: GenMessage<GetUploadUrlResponse> =
-	/*@__PURE__*/
-	messageDesc(file_upload_v1_upload, 3);
+export const GetUploadUrlResponseSchema: GenMessage<GetUploadUrlResponse> = /*@__PURE__*/
+  messageDesc(file_upload_v1_upload, 3);
 
 /**
  * 完成上传请求
  *
  * @generated from message upload.v1.CompleteUploadRequest
  */
-export type CompleteUploadRequest =
-	Message<"upload.v1.CompleteUploadRequest"> & {
-		/**
-		 * @generated from field: string file_hash = 1;
-		 */
-		fileHash: string;
+export type CompleteUploadRequest = Message<"upload.v1.CompleteUploadRequest"> & {
+  /**
+   * @generated from field: string file_hash = 1;
+   */
+  fileHash: string;
 
-		/**
-		 * @generated from field: string storage_key = 2;
-		 */
-		storageKey: string;
-	};
+  /**
+   * @generated from field: string storage_key = 2;
+   */
+  storageKey: string;
+};
 
 /**
  * Describes the message upload.v1.CompleteUploadRequest.
  * Use `create(CompleteUploadRequestSchema)` to create a new message.
  */
-export const CompleteUploadRequestSchema: GenMessage<CompleteUploadRequest> =
-	/*@__PURE__*/
-	messageDesc(file_upload_v1_upload, 4);
+export const CompleteUploadRequestSchema: GenMessage<CompleteUploadRequest> = /*@__PURE__*/
+  messageDesc(file_upload_v1_upload, 4);
 
 /**
  * 完成上传响应
  *
  * @generated from message upload.v1.CompleteUploadResponse
  */
-export type CompleteUploadResponse =
-	Message<"upload.v1.CompleteUploadResponse"> & {
-		/**
-		 * @generated from field: string file_hash = 1;
-		 */
-		fileHash: string;
+export type CompleteUploadResponse = Message<"upload.v1.CompleteUploadResponse"> & {
+  /**
+   * @generated from field: string file_hash = 1;
+   */
+  fileHash: string;
 
-		/**
-		 * @generated from field: string storage_key = 2;
-		 */
-		storageKey: string;
+  /**
+   * @generated from field: string storage_key = 2;
+   */
+  storageKey: string;
 
-		/**
-		 * @generated from field: bool success = 3;
-		 */
-		success: boolean;
-	};
+  /**
+   * @generated from field: bool success = 3;
+   */
+  success: boolean;
+};
 
 /**
  * Describes the message upload.v1.CompleteUploadResponse.
  * Use `create(CompleteUploadResponseSchema)` to create a new message.
  */
-export const CompleteUploadResponseSchema: GenMessage<CompleteUploadResponse> =
-	/*@__PURE__*/
-	messageDesc(file_upload_v1_upload, 5);
+export const CompleteUploadResponseSchema: GenMessage<CompleteUploadResponse> = /*@__PURE__*/
+  messageDesc(file_upload_v1_upload, 5);
 
 /**
  * 上传服务
@@ -173,34 +153,36 @@ export const CompleteUploadResponseSchema: GenMessage<CompleteUploadResponse> =
  * @generated from service upload.v1.UploadService
  */
 export const UploadService: GenService<{
-	/**
-	 * 检查文件hash是否存在
-	 *
-	 * @generated from rpc upload.v1.UploadService.CheckFileHash
-	 */
-	checkFileHash: {
-		methodKind: "unary";
-		input: typeof CheckFileHashRequestSchema;
-		output: typeof CheckFileHashResponseSchema;
-	};
-	/**
-	 * 获取上传url
-	 *
-	 * @generated from rpc upload.v1.UploadService.GetUploadUrl
-	 */
-	getUploadUrl: {
-		methodKind: "unary";
-		input: typeof GetUploadUrlRequestSchema;
-		output: typeof GetUploadUrlResponseSchema;
-	};
-	/**
-	 * 完成上传
-	 *
-	 * @generated from rpc upload.v1.UploadService.CompleteUpload
-	 */
-	completeUpload: {
-		methodKind: "unary";
-		input: typeof CompleteUploadRequestSchema;
-		output: typeof CompleteUploadResponseSchema;
-	};
-}> = /*@__PURE__*/ serviceDesc(file_upload_v1_upload, 0);
+  /**
+   * 检查文件hash是否存在
+   *
+   * @generated from rpc upload.v1.UploadService.CheckFileHash
+   */
+  checkFileHash: {
+    methodKind: "unary";
+    input: typeof CheckFileHashRequestSchema;
+    output: typeof CheckFileHashResponseSchema;
+  },
+  /**
+   * 获取上传url
+   *
+   * @generated from rpc upload.v1.UploadService.GetUploadUrl
+   */
+  getUploadUrl: {
+    methodKind: "unary";
+    input: typeof GetUploadUrlRequestSchema;
+    output: typeof GetUploadUrlResponseSchema;
+  },
+  /**
+   * 完成上传
+   *
+   * @generated from rpc upload.v1.UploadService.CompleteUpload
+   */
+  completeUpload: {
+    methodKind: "unary";
+    input: typeof CompleteUploadRequestSchema;
+    output: typeof CompleteUploadResponseSchema;
+  },
+}> = /*@__PURE__*/
+  serviceDesc(file_upload_v1_upload, 0);
+

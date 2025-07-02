@@ -7,7 +7,13 @@ import {
 	Badge,
 } from "@chakra-ui/react";
 import { useRef } from "react";
-import { RiAddLine, RiFolderAddLine, RiUploadLine } from "react-icons/ri";
+import {
+	RiAddLine,
+	RiDownloadCloudLine,
+	RiFileAddLine,
+	RiFolderAddLine,
+	RiUploadLine,
+} from "react-icons/ri";
 import { useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -25,7 +31,7 @@ export default function CreateActionsMenu({
 	parentId,
 }: CreateActionsMenuProps) {
 	const fileInputRef = useRef<HTMLInputElement>(null);
-	const { setCreateFolderDialog } = useDialogStore();
+	const { setCreateFolderDialog, setOfflineDownloadDialog } = useDialogStore();
 
 	const queryClient = useQueryClient();
 
@@ -136,6 +142,13 @@ export default function CreateActionsMenu({
 								>
 									<Icon as={RiFolderAddLine} />
 									新建文件夹
+								</Menu.Item>
+								<Menu.Item
+									value="offline-download"
+									onClick={() => setOfflineDownloadDialog(true)}
+								>
+									<Icon as={RiDownloadCloudLine} />
+									离线下载
 								</Menu.Item>
 							</Menu.Content>
 						</Menu.Positioner>

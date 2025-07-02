@@ -9,6 +9,7 @@ import { redirect } from "react-router";
 
 import { AuthService } from "~/gen/auth/v1/auth_pb";
 import { NodeService } from "~/gen/node/v1/node_pb";
+import { TorrentService } from "~/gen/torrent/v1/torrent_pb";
 import { UploadService } from "~/gen/upload/v1/upload_pb";
 import { useAuthStore } from "~/stores/auth";
 
@@ -41,3 +42,4 @@ export const transport = createConnectTransport({
 export const authClient = createClient(AuthService, transport);
 export const nodeClient = createClient(NodeService, transport);
 export const uploadClient = createClient(UploadService, transport);
+export const torrentClient = createClient(TorrentService, transport);
