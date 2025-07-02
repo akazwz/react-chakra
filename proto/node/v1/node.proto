@@ -20,18 +20,18 @@ service NodeService {
 
 // 节点
 message Node {
-    string id = 1;
-    string name = 2;
-    string parent_id = 3;
-    string user_id = 4;
-    bool is_folder = 5;
-    int64 size = 6;
-    string hash = 7;
-    string mime_type = 8;
-    string thumbnail_url = 9;
-    string preview_url = 10;
-    string created_at = 11;
-    string updated_at = 12;
+  string id = 1;
+  string name = 2;
+  string parent_id = 3;
+  string user_id = 4;
+  bool is_folder = 5;
+  int64 size = 6;
+  string hash = 7;
+  string mime_type = 8;
+  string thumbnail_url = 9;
+  string preview_url = 10;
+  string created_at = 11;
+  string updated_at = 12;
 }
 
 message CreateNodeRequest {
@@ -47,6 +47,7 @@ message CreateNodeResponse {
 
 message GetNodeListRequest {
   string parent_id = 1;
+  bool folders_only = 2; // 只返回文件夹
 }
 
 message GetNodeListResponse {
@@ -58,7 +59,7 @@ message GetNodePathRequest {
 }
 
 message GetNodePathResponse {
-  repeated PathSegment path_segments = 1;      // 面包屑路径段
+  repeated PathSegment path_segments = 1; // 面包屑路径段
 }
 
 // 路径段

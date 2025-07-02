@@ -2,15 +2,26 @@
 // @generated from file torrent/v1/torrent.proto (package torrent.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
+import {
+	fileDesc,
+	messageDesc,
+	serviceDesc,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file torrent/v1/torrent.proto.
  */
-export const file_torrent_v1_torrent: GenFile = /*@__PURE__*/
-  fileDesc("Chh0b3JyZW50L3YxL3RvcnJlbnQucHJvdG8SCnRvcnJlbnQudjEiZAoLVG9ycmVudEluZm8SDAoEbmFtZRgBIAEoCRIMCgRzaXplGAIgASgDEhEKCWluZm9faGFzaBgDIAEoCRImCgVmaWxlcxgEIAMoCzIXLnRvcnJlbnQudjEuVG9ycmVudEZpbGUiKQoLVG9ycmVudEZpbGUSDAoEcGF0aBgBIAEoCRIMCgRzaXplGAIgASgDIisKFUdldFRvcnJlbnRJbmZvUmVxdWVzdBISCgptYWduZXRfdXJpGAEgASgJIj8KFkdldFRvcnJlbnRJbmZvUmVzcG9uc2USJQoEaW5mbxgBIAEoCzIXLnRvcnJlbnQudjEuVG9ycmVudEluZm8yaQoOVG9ycmVudFNlcnZpY2USVwoOR2V0VG9ycmVudEluZm8SIS50b3JyZW50LnYxLkdldFRvcnJlbnRJbmZvUmVxdWVzdBoiLnRvcnJlbnQudjEuR2V0VG9ycmVudEluZm9SZXNwb25zZUIlWiNieXRlcGFja2VyL2dlbi90b3JyZW50L3YxO3RvcnJlbnR2MWIGcHJvdG8z");
+export const file_torrent_v1_torrent: GenFile =
+	/*@__PURE__*/
+	fileDesc(
+		"Chh0b3JyZW50L3YxL3RvcnJlbnQucHJvdG8SCnRvcnJlbnQudjEiZAoLVG9ycmVudEluZm8SDAoEbmFtZRgBIAEoCRIMCgRzaXplGAIgASgDEhEKCWluZm9faGFzaBgDIAEoCRImCgVmaWxlcxgEIAMoCzIXLnRvcnJlbnQudjEuVG9ycmVudEZpbGUiKQoLVG9ycmVudEZpbGUSDAoEcGF0aBgBIAEoCRIMCgRzaXplGAIgASgDIisKFUdldFRvcnJlbnRJbmZvUmVxdWVzdBISCgptYWduZXRfdXJpGAEgASgJIj8KFkdldFRvcnJlbnRJbmZvUmVzcG9uc2USJQoEaW5mbxgBIAEoCzIXLnRvcnJlbnQudjEuVG9ycmVudEluZm8yaQoOVG9ycmVudFNlcnZpY2USVwoOR2V0VG9ycmVudEluZm8SIS50b3JyZW50LnYxLkdldFRvcnJlbnRJbmZvUmVxdWVzdBoiLnRvcnJlbnQudjEuR2V0VG9ycmVudEluZm9SZXNwb25zZUIlWiNieXRlcGFja2VyL2dlbi90b3JyZW50L3YxO3RvcnJlbnR2MWIGcHJvdG8z",
+	);
 
 /**
  * Torrent信息
@@ -18,33 +29,34 @@ export const file_torrent_v1_torrent: GenFile = /*@__PURE__*/
  * @generated from message torrent.v1.TorrentInfo
  */
 export type TorrentInfo = Message<"torrent.v1.TorrentInfo"> & {
-  /**
-   * @generated from field: string name = 1;
-   */
-  name: string;
+	/**
+	 * @generated from field: string name = 1;
+	 */
+	name: string;
 
-  /**
-   * @generated from field: int64 size = 2;
-   */
-  size: bigint;
+	/**
+	 * @generated from field: int64 size = 2;
+	 */
+	size: bigint;
 
-  /**
-   * @generated from field: string info_hash = 3;
-   */
-  infoHash: string;
+	/**
+	 * @generated from field: string info_hash = 3;
+	 */
+	infoHash: string;
 
-  /**
-   * @generated from field: repeated torrent.v1.TorrentFile files = 4;
-   */
-  files: TorrentFile[];
+	/**
+	 * @generated from field: repeated torrent.v1.TorrentFile files = 4;
+	 */
+	files: TorrentFile[];
 };
 
 /**
  * Describes the message torrent.v1.TorrentInfo.
  * Use `create(TorrentInfoSchema)` to create a new message.
  */
-export const TorrentInfoSchema: GenMessage<TorrentInfo> = /*@__PURE__*/
-  messageDesc(file_torrent_v1_torrent, 0);
+export const TorrentInfoSchema: GenMessage<TorrentInfo> =
+	/*@__PURE__*/
+	messageDesc(file_torrent_v1_torrent, 0);
 
 /**
  * Torrent文件
@@ -52,61 +64,66 @@ export const TorrentInfoSchema: GenMessage<TorrentInfo> = /*@__PURE__*/
  * @generated from message torrent.v1.TorrentFile
  */
 export type TorrentFile = Message<"torrent.v1.TorrentFile"> & {
-  /**
-   * @generated from field: string path = 1;
-   */
-  path: string;
+	/**
+	 * @generated from field: string path = 1;
+	 */
+	path: string;
 
-  /**
-   * @generated from field: int64 size = 2;
-   */
-  size: bigint;
+	/**
+	 * @generated from field: int64 size = 2;
+	 */
+	size: bigint;
 };
 
 /**
  * Describes the message torrent.v1.TorrentFile.
  * Use `create(TorrentFileSchema)` to create a new message.
  */
-export const TorrentFileSchema: GenMessage<TorrentFile> = /*@__PURE__*/
-  messageDesc(file_torrent_v1_torrent, 1);
+export const TorrentFileSchema: GenMessage<TorrentFile> =
+	/*@__PURE__*/
+	messageDesc(file_torrent_v1_torrent, 1);
 
 /**
  * 获取torrent信息请求
  *
  * @generated from message torrent.v1.GetTorrentInfoRequest
  */
-export type GetTorrentInfoRequest = Message<"torrent.v1.GetTorrentInfoRequest"> & {
-  /**
-   * @generated from field: string magnet_uri = 1;
-   */
-  magnetUri: string;
-};
+export type GetTorrentInfoRequest =
+	Message<"torrent.v1.GetTorrentInfoRequest"> & {
+		/**
+		 * @generated from field: string magnet_uri = 1;
+		 */
+		magnetUri: string;
+	};
 
 /**
  * Describes the message torrent.v1.GetTorrentInfoRequest.
  * Use `create(GetTorrentInfoRequestSchema)` to create a new message.
  */
-export const GetTorrentInfoRequestSchema: GenMessage<GetTorrentInfoRequest> = /*@__PURE__*/
-  messageDesc(file_torrent_v1_torrent, 2);
+export const GetTorrentInfoRequestSchema: GenMessage<GetTorrentInfoRequest> =
+	/*@__PURE__*/
+	messageDesc(file_torrent_v1_torrent, 2);
 
 /**
  * 获取torrent信息响应
  *
  * @generated from message torrent.v1.GetTorrentInfoResponse
  */
-export type GetTorrentInfoResponse = Message<"torrent.v1.GetTorrentInfoResponse"> & {
-  /**
-   * @generated from field: torrent.v1.TorrentInfo info = 1;
-   */
-  info?: TorrentInfo;
-};
+export type GetTorrentInfoResponse =
+	Message<"torrent.v1.GetTorrentInfoResponse"> & {
+		/**
+		 * @generated from field: torrent.v1.TorrentInfo info = 1;
+		 */
+		info?: TorrentInfo;
+	};
 
 /**
  * Describes the message torrent.v1.GetTorrentInfoResponse.
  * Use `create(GetTorrentInfoResponseSchema)` to create a new message.
  */
-export const GetTorrentInfoResponseSchema: GenMessage<GetTorrentInfoResponse> = /*@__PURE__*/
-  messageDesc(file_torrent_v1_torrent, 3);
+export const GetTorrentInfoResponseSchema: GenMessage<GetTorrentInfoResponse> =
+	/*@__PURE__*/
+	messageDesc(file_torrent_v1_torrent, 3);
 
 /**
  * Torrent服务
@@ -114,16 +131,14 @@ export const GetTorrentInfoResponseSchema: GenMessage<GetTorrentInfoResponse> = 
  * @generated from service torrent.v1.TorrentService
  */
 export const TorrentService: GenService<{
-  /**
-   * 获取torrent信息
-   *
-   * @generated from rpc torrent.v1.TorrentService.GetTorrentInfo
-   */
-  getTorrentInfo: {
-    methodKind: "unary";
-    input: typeof GetTorrentInfoRequestSchema;
-    output: typeof GetTorrentInfoResponseSchema;
-  },
-}> = /*@__PURE__*/
-  serviceDesc(file_torrent_v1_torrent, 0);
-
+	/**
+	 * 获取torrent信息
+	 *
+	 * @generated from rpc torrent.v1.TorrentService.GetTorrentInfo
+	 */
+	getTorrentInfo: {
+		methodKind: "unary";
+		input: typeof GetTorrentInfoRequestSchema;
+		output: typeof GetTorrentInfoResponseSchema;
+	};
+}> = /*@__PURE__*/ serviceDesc(file_torrent_v1_torrent, 0);

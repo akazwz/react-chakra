@@ -6,10 +6,14 @@ import {
 	Stack,
 	Field,
 	Textarea,
+	Text,
+	Spacer,
+	Icon,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { RiArrowRightSLine } from "react-icons/ri";
 import { z } from "zod";
 
 import { torrentClient } from "~/client/connect";
@@ -82,7 +86,7 @@ export default function OfflineDownloadDialog() {
 							<Dialog.Header>
 								<Dialog.Title>离线下载</Dialog.Title>
 							</Dialog.Header>
-							<Dialog.Body>
+							<Dialog.Body display="flex" flexDirection="column" gap="4">
 								<Stack gap="4" align="flex-start">
 									<Field.Root invalid={!!errors.magnet}>
 										<Field.Label>磁力链接</Field.Label>
@@ -90,6 +94,12 @@ export default function OfflineDownloadDialog() {
 										<Field.ErrorText>{errors.magnet?.message}</Field.ErrorText>
 									</Field.Root>
 								</Stack>
+								<Button variant="subtle" w="full">
+									<Text>保存到</Text>
+									<Spacer />
+									<Text>根目录</Text>
+									<Icon as={RiArrowRightSLine} />
+								</Button>
 							</Dialog.Body>
 							<Dialog.Footer>
 								<Dialog.ActionTrigger asChild>
